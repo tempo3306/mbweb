@@ -1,14 +1,29 @@
-import App from '../app';
-import Signin from '../pages/signin/';
-import Signout from '../pages/signout/';
-import About from '../pages/about/';
-import UserUsername from '../pages/user/username/';
-import SelfHome from '../pages/self/home/';
-import SelfMessages from '../pages/self/messages/';
-import TopicCreate from '../pages/topic/create/';
-import TopicDetail from '../pages/topic/detail/';
-import Index from '../pages/index/';
-import Snkrank from '@/pages/topic/snkrank'
+// import App from '../app';
+// import Signin from '../pages/signin/';
+// import Signout from '../pages/signout/';
+// import About from '../pages/about/';
+// import UserUsername from '../pages/user/username/';
+// import SelfHome from '../pages/self/home/';
+// import SelfMessages from '../pages/self/messages/';
+// import TopicCreate from '../pages/topic/create/';
+// import TopicDetail from '../pages/topic/detail/';
+// import Index from '../pages/index/';
+// import Snkrank from '@/pages/topic/snkrank'
+
+const App = r => require.ensure([], () => r(require('../app')), 'App');
+const Signin = r => require.ensure([], () => r(require('@/pages/signin/index')), 'Signin');
+const Signout = r => require.ensure([], () => r(require('@/pages/signout/index')), 'Signout');
+const About = r => require.ensure([], () => r(require('@/pages/about/index')), 'About');
+const UserUsername = r => require.ensure([], () => r(require('@/pages/user/username/index')), 'UserUsername');
+const SelfHome = r => require.ensure([], () => r(require('@/pages/self/home/index')), 'SelfHome');
+const SelfMessages = r => require.ensure([], () => r(require('@/pages/self/messages/index')), 'SelfMessages');
+const TopicCreate = r => require.ensure([], () => r(require('@/pages/topic/create/index')), 'TopicCreate');
+const TopicDetail = r => require.ensure([], () => r(require('@/pages/topic/detail/index')), 'TopicDetail');
+const Index = r => require.ensure([], () => r(require('@/pages/index/index')), 'Index');
+const Snkrank = r => require.ensure([], () => r(require('@/pages/topic/snkrank/index')), 'Snkrank');
+
+
+
 /**
  * auth true登录才能访问，false不需要登录，默认true
  */
@@ -71,15 +86,16 @@ export default [
                 component: Index
             },
             {
-                path: '*', // 其他页面
-                redirect: '/signin'
-            },
-            {
                 path: '/snkrank/', // 获取排名
                 name: 'snkrank',
                 meta: {auth: false},
                 component: Snkrank
             },
+            {
+                path: '*', // 其他页面
+                redirect: '/signin'
+            },
+
         ]
     }
 ];

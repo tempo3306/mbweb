@@ -7,7 +7,7 @@ Vue.use(Router)
 const router = new Router({
   routes,
   mode: 'history',
-  base: '/SNK/'
+  base: '/mbweb/'
 })
 
 router.beforeEach(({ meta, path }, from, next) => {

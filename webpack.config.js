@@ -32,7 +32,9 @@ const webpackConfig = {
     },
     output: {
         filename: 'js/[name].[hash].js',
+        //“path”仅仅告诉Webpack结果存储在哪里
         path: path.resolve(__dirname, `${configs.dest}static`),
+        //用于在生产模式下更新内嵌到css、html文件里的url值
         publicPath: configs.publicPath
     },
     module: {
