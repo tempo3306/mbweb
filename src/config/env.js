@@ -6,7 +6,6 @@
  * baseImgPath: 图片存放地址
  *
  */
-let baseUrl = '//127.0.0.1:8000';
 let routerMode = 'hash';
 let baseImgPath;
 
@@ -15,7 +14,7 @@ if (process.env.NODE_ENV == 'development') {
     baseUrl = '//127.0.0.1:8000';
     baseImgPath = '//127.0.0.1:8000/media/user_image/';
 }else{
-    baseUrl = '//127.0.0.1:8000';
+    baseUrl = '//https://qiuplus.cn';
     baseImgPath = '/media/user_image/';
 }
 
