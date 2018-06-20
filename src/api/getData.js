@@ -1,13 +1,16 @@
 import axios from 'axios';
 import qs from 'qs';
-import {baseUrl} from '@/config/env';
+// import {baseUrl} from '@/config/env';
 import router from '@/router/index';
 import * as types from '@/store/types';
 import store from '@/store/index';
 import {getToken} from '@/utils/auth';
+import {baseUrl} from '@/config/env';
+
 
 let cancel, promiseArr = {};
 const CancelToken = axios.CancelToken;
+
 
 
 

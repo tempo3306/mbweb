@@ -7,24 +7,35 @@
  *
  */
 let routerMode = 'hash';
-let baseImgPath;
 
 
-if (process.env.NODE_ENV == 'development') {
+let env = process.env.NODE_ENV;
+
+let baseUrl = '';
+let baseImgPath = '';
+
+
+if (typeof(env) == 'undefined') {
+    if (env === 'production') {
+        baseUrl = 'https://qiuplus.cn';
+        baseImgPath = '//127.0.0.1:8000/media/user_image/';
+    } else {
+        baseUrl = '//127.0.0.1:8000';
+        baseImgPath = '/media/user_image/';
+    }
+}
+else {
     baseUrl = '//127.0.0.1:8000';
-    baseImgPath = '//127.0.0.1:8000/media/user_image/';
-}else{
-    baseUrl = '//https://qiuplus.cn';
     baseImgPath = '/media/user_image/';
 }
+console.log(baseUrl);
 
 // baseUrl = '';
 // baseImgPath = '/img/';
-
 
 
 export {
     baseUrl,
     routerMode,
     baseImgPath
-}
+};
