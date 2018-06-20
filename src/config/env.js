@@ -15,7 +15,7 @@ let baseUrl = '';
 let baseImgPath = '';
 
 
-if (typeof(env) == 'undefined') {
+if (typeof(env) !== 'undefined') {
     if (env === 'production') {
         baseUrl = 'https://qiuplus.cn';
         baseImgPath = '//127.0.0.1:8000/media/user_image/';
@@ -29,6 +29,7 @@ else {
     baseImgPath = '/media/user_image/';
 }
 console.log(baseUrl);
+console.log(env);
 
 // baseUrl = '';
 // baseImgPath = '/img/';
